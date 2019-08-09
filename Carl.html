@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fortnite</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+    <style>
+      .checked{
+text-decoration: line-through;
+    }
+    h1{ 
+        color:turquoise
+
+    }
+    #p1{
+        color: deeppink;
+    }
+    #p2{
+        color: green;
+    }
+    body{
+        background-color: darkorchid;
+        font-family: fantasy;
+        font-size: x-large
+    }
+    img{
+        width: 2000px;                                              
+     height : 1000px             
+        }
+        h5{
+          color:greenyellow
+        }
+    </style>
+   
+   <body id = "batikha">
+        <h2>My To-Do's</h2>
+        <input type = "text" id ="input1">
+        <button id = "addBtn">Add</button>
+        <div id = "content"></div>
+        <h1>Victory Royale<h1>
+            <input id= "input" placeholder="Choose A Color">
+            <button id = "changeBtn">Change Color</button>
+            
+            <p id = "p1">20 bomb</p>
+            <p id = "p2">little fishy</p>
+            <p id = "p3">Everyone hates HADY</p>
+            <a href = "https://www.epicgames.com/store/en-US/product/fortnite/home"></a>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nsPG8fd3nw8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GD2cOOwCkkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kvv06jEFlSY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="fishy gang.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="fortnite.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="fish.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+              
+              <script>
+                  document.getElementById('content').innerHTML = localStorage.getItem('myList')
+                    document.getElementById('changeBtn').addEventListener('click',function(){
+                        document.getElementById('batikha').style.backgroundColor = document.getElementById("input").value;
+                    })
+                    document.getElementById('addBtn').addEventListener('click', function(){
+    var a = document.createElement('li')
+    var c = document.createElement('input')
+c.setAttribute('type','checkbox')
+c.addEventListener('change', checkItem)
+a.append(c)
+a.append(document.getElementById('input1').value)
+
+    var b = document.createElement('button')
+b.addEventListener('click', removeItem)
+b.innerHTML = "X"
+a.append(b)
+
+
+document.getElementById('content').append(a)
+
+localStorage.setItem('myList', document.getElementById('content').innerHTML)
+})
+function removeItem(){
+this.parentNode.remove()
+}
+function checkItem(){
+    this.parentNode.classList.toggle('checked')
+}
+                    </script>
+    </body>
+</html>
